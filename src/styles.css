@@ -1,0 +1,53 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  /* background-color: #faf4ec; */
+  background-color: #a4b4cb;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: #0c213c;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 22px;
+  color: #fff1dc;
+}
+
+footer {
+  background-color: #0c213c;
+  padding: 20px;
+  font-size: 18px;
+  margin: 1.5rem 0 0;
+  color: #fff1dc;
+}
+
+li {
+  list-style-type: none;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  color: rgb(2, 0, 53);
+  justify-content: center;
+}
+
+.removeButton {
+  background-color: red;
+  border: none;
+  color: white;
+  margin: 0 10px;
+  padding: 5px 8px;
+}
+
+.addItem {
+  background-color: rgb(2, 0, 53);
+  color: white;
+  padding: 7px 15px;
+  /* font-size: 17px; */
+  border-radius: 10px;
+}
