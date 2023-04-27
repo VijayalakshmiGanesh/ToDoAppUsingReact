@@ -7,6 +7,9 @@ function UpdateTodoItems() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const [newIDgenerator, setNewIDgenerator] = useState(
+    state.todo[state.todo.length - 1].id + 1
+  );
 
   const SubmitHandler = () => {
     setIsClicked(true);
@@ -15,12 +18,13 @@ function UpdateTodoItems() {
       dispatch({
         type: "Add_Todo",
         payload: {
-          id: state.todo.length + 1,
+          id: newIDgenerator,
           title: title,
           description: description,
-          isCompleted: false
-        }
+          isCompleted: false,
+        },
       });
+    setNewIDgenerator((prevId) => prevId + 1);
   };
   return (
     <>
@@ -63,6 +67,9 @@ function UpdateTodoItems() {
       </p>
       <hr />
       <h2>Current todo list</h2>
+      <p style={{ color: "rgb(183, 31, 36)" }}>
+        Items present: {state.todo.length}
+      </p>
       <ul>
         {state.todo.length !== 0 ? (
           state.todo.map(({ id, title }) => {

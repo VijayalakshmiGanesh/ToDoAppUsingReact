@@ -9,6 +9,9 @@ function NotDoneTodo() {
   return (
     <>
       <h2>List of Incomplete items</h2>
+      <p style={{ color: "rgb(183, 31, 36)" }}>
+        Total items yet to be completed: {undoneItems.length}
+      </p>
       {undoneItems.length !== 0 ? (
         undoneItems.map((item) => {
           return <TodoTile todoItem={item} />;
