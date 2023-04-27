@@ -8,7 +8,7 @@ function UpdateTodoItems() {
   const [description, setDescription] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [newIDgenerator, setNewIDgenerator] = useState(
-    state.todo[state.todo.length - 1].id + 1
+    state.todo.length !== 0 ? state.todo[state.todo.length - 1]?.id + 1 : 1
   );
 
   const SubmitHandler = () => {
@@ -26,7 +26,7 @@ function UpdateTodoItems() {
       });
     setNewIDgenerator((prevId) => prevId + 1);
   };
-
+  console.log("len", state.todo.length);
   useEffect(() => {}, [state]);
   return (
     <>

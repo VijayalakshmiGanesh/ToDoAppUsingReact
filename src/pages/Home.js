@@ -8,9 +8,13 @@ function Home() {
   return (
     <>
       <h2>List of Todos</h2>
-      {state.todo.map((item) => {
-        return <TodoTile todoItem={item} />;
-      })}
+      {state.todo.length !== 0 ? (
+        state.todo.map((item) => {
+          return <TodoTile todoItem={item} />;
+        })
+      ) : (
+        <p>No items present.</p>
+      )}
     </>
   );
 }
