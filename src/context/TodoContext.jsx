@@ -5,8 +5,9 @@ import { todoItems } from "../data/db";
 export const TodoContext = createContext();
 
 export function TodoProvider({ children }) {
+  //Reducer function
   const handleTodos = (acc, value) => {
-    console.log(value);
+    // console.log(value);
     switch (value.type) {
       case "Add_Todo":
         return { todo: [...acc.todo, value.payload] };
@@ -20,11 +21,11 @@ export function TodoProvider({ children }) {
             if (task.id === value.payload.id) {
               return {
                 ...task,
-                isCompleted: value.payload.completed
+                isCompleted: value.payload.completed,
               };
             }
             return task;
-          })
+          }),
         };
 
       default:
@@ -34,20 +35,6 @@ export function TodoProvider({ children }) {
     return acc;
   };
   const [state, dispatch] = useReducer(handleTodos, { todo: todoItems });
-
-  // dispatch({
-  //   type: "Add_Todo",
-  //   payload: {
-  //     id: 11,
-  //     title: "xxxxxxWatch recording",
-  //     description: "xxxxxLive session recording of React",
-  //     isCompleted: true
-  //   }
-  // });
-
-  // dispatch({ type: "Remove_todo", payload: 11 });
-
-  // dispatch({ type: "Toggle_Todo", payload: {id:10, completed:true }});
 
   return (
     <TodoContext.Provider value={{ state, dispatch }}>
