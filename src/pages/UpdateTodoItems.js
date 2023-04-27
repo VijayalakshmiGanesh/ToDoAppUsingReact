@@ -26,7 +26,7 @@ function UpdateTodoItems() {
       });
     setNewIDgenerator((prevId) => prevId + 1);
   };
-  console.log("len", state.todo.length);
+
   useEffect(() => {}, [state]);
   return (
     <>

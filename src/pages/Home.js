@@ -4,7 +4,7 @@ import { TodoContext } from "../context/TodoContext";
 
 function Home() {
   const { state } = useContext(TodoContext);
-  console.log(state);
+
   return (
     <>
       <h2>List of Todos</h2>
