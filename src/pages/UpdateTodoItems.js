@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import { TodoContext } from "../context/TodoContext";
 
@@ -26,6 +26,8 @@ function UpdateTodoItems() {
       });
     setNewIDgenerator((prevId) => prevId + 1);
   };
+
+  useEffect(() => {}, [state]);
   return (
     <>
       <h2>Add new Todo item</h2>
